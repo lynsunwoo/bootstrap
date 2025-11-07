@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04bootstrap_페이지네이션</title>
+  <!-- 1. 부트스트랩 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 2. 부트스트랩 javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+  <style>
+    .t_wrap{
+      width:1200px;
+      margin:0 auto;
+      text-align:center;
+    }
+    .title{
+      width:500px;
+    }
+    .num{
+      width:80px;
+    }
+    .name{
+      width:80px;
+    }
+    .date{width:100px;}
+    .view{width:80px;}
+  </style>
+</head>
+
+<body>
+  <h2>04bootstrap_페이지네이션</h2>
+  <p>nav, ul, li, a태그로 작성하고 nav태그에 aria-able속성을 작성한다.(페이지 내비게이션이 여러개 있을 수 있기 때문에 목적을 반영하기 위함. ==접근성)</p>
+  <p>페이지네이션은 페이지수를 표시하는 '숫자'와 '이전', '다음' 버튼을 만들고자 할 때 사용한다.</p>
+  <p>큰 블록의 링크를 사용하고 있어서, 넓은 클릭 영역을 제공하면서 쉽게 확장할 수 있다. 목록의 html 요소로 구성되며, 스크린리더는 이용 가능한 링크의 수를 알려준다. nav요소를 사용하여 스크린리더나
+    기타지원 기술에서 내비게이션 영역에서 식별이 가능하다.</p>
+  <p>페이지는 여러개의 내비게이션 영역이 있을 가능성이 높기 때문에, 그 목적을 반영하기 위해 nav에 aria-label을 붙이는 것을 권장(웹접근성)</p>
+
+  <h3>1. 페이지 번호표시하기</h3>
+  <nav aria-lable="페이지 내비게이션">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a href="#" title="" class="page-link">prev</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">1</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">2</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">3</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">4</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">5</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">6</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">7</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">8</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">next</a></li>
+    </ul>
+  </nav>
+
+  <p>ul태그에 '.pagination', li태그에 '.page-item', a태그에 '.page-link' 크래스명 적용</p>
+  <p>비활성된 메뉴는 'disabled' class명 적용</p>
+
+  <h3>2. 이전, 다음 버튼을 아이콘으로 전환하기</h3>
+  <nav aria-lable="페이지 내비게이션">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a href="#" title="" class="page-link"><span aria-hidden="true">&laquo;</span></a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">1</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">2</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">3</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">4</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">5</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">6</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">7</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">8</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link"><span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </nav>
+  
+  <h3>3. 선택한 요소에 서식 적용하기 : active</h3>
+  <p>사용자가 페이지 번호를 클릭시 해당페이지가 나왔을 때 해당번호가 선택된 것처럼 서식을 적용하기</p>
+  <nav aria-lable="페이지 내비게이션">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a href="#" title="" class="page-link"><span aria-hidden="true">&laquo;</span></a></li>
+      <li class="page-item active"><a href="#" title="" class="page-link">1</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">2</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">3</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">4</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">5</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">6</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">7</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">8</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link"><span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </nav>
+
+  <h3>4. 버튼 비활성화하기 : disabled</h3>
+  <nav aria-lable="페이지 내비게이션">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a href="#" title="" class="page-link disabled"><span aria-hidden="true">&laquo;</span></a></li>
+      <li class="page-item active"><a href="#" title="" class="page-link ">1</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">2</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">3</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">4</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">5</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">6</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">7</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link">8</a></li>
+      <li class="page-item"><a href="#" title="" class="page-link"><span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </nav>
+
+  <h3>5. 버튼의 크기 조절하기</h3>
+  <p>ul태그의 크기를 조정하고자 할 때는 ul태그에 .pagination-lg나 .paginstion-sm을 추가하면 된다.</p>
+
+  <h3>6. 페이지네이션 정렬하기</h3>
+  <p>ul태그에 .justify-content-center or .justify-content-end;클래스를 사용한다.</p>
+
+  <h3>7. 실습하기 </h3>
+  <div class="t_wrap">
+    <caption>실습하기 테이블 만들기</caption>
+    <p class="text-start"><a href="#" title="">로그아웃</a></p>
+    <table class="table table-hover" id="table_01">
+      <thead class="table-bordered">
+        <tr class="text-center">
+          <th class="num">번호</th>
+          <th class="title">제목</th>
+          <th class="name">이름</th>
+          <th class="date">날짜</th>
+          <th class="view">조회수</th>
+        </tr>
+      </thead>
+
+      <tbody class="text-center">
+        <tr>
+          <td>1</td>
+          <td class="text-start"><a href="#" title="">1234</a></td>
+          <td>선우린</td>
+          <td>2025-10-30</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="text-start"><a href="#" title="">1234</a></td>
+          <td>선우린</td>
+          <td>2025-10-30</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td class="text-start"><a href="#" title="">1234</a></td>
+          <td>선우린</td>
+          <td>2025-10-30</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td class="text-start"><a href="#" title="">1234</a></td>
+          <td>선우린</td>
+          <td>2025-10-30</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td class="text-start"><a href="#" title="">1234</a></td>
+          <td>선우린</td>
+          <td>2025-10-30</td>
+          <td>6</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="5" class="text-center">
+            <nav aria-label="페이지 내비게이션">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" class="page-link">4</a></li>
+                <li class="page-item"><a href="#" class="page-link">5</a></li>
+                <li class="page-item"><a href="#" class="page-link">다음</a></li>
+              </ul>
+            </nav>
+
+            <form class="d-flex justify-content-center align-items-center gap-2" role="search">
+              <select class="form-select w-auto">
+                <option selected>검색대상</option>
+                <option value="title">제목</option>
+                <option value="name">이름</option>
+              </select>
+              <input type="search" class="form-control w-auto" placeholder="검색어 입력" aria-label="검색어">
+              <button class="btn btn-primary">검색</button>
+            </form>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</body>
+
+</html>

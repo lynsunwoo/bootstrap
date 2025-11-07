@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05_로그인 회원가입</title>
+  <!-- 1. 부트스트랩 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 2. 부트스트랩 javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script>
+
+  <!-- 3. 부트스트랩 아이콘 주소 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    body {
+      height: 100vh;
+      background: #02006e;
+      background: linear-gradient(180deg, rgb(49, 47, 145) 0%, rgb(110, 177, 189) 99%);
+    }
+
+    body h2 {
+      display: none;
+    }
+
+    fieldset {
+      background: #fff;
+      width: 600px;
+      border: 1px solid #ccc;
+      /* 테두리 */
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      /* 그림자 */
+      border-radius: 20px;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>로그인 회원가입 실습</h2>
+  <form name="" method="" action="">
+    <fieldset>
+      <legend>회원가입</legend>
+
+      <div class="row g-3">
+        <!-- 이름 / 별명 -->
+        <div class="col-6">
+          <label for="user_name" class="form-label">이름</label>
+          <input type="text" id="user_name" class="form-control">
+        </div>
+        <div class="col-6">
+          <label for="nick_name" class="form-label">별명</label>
+          <input type="text" id="nick_name" class="form-control">
+        </div>
+
+        <!-- 이메일 (한 줄 전체) -->
+        <div class="col-12">
+          <label for="email" class="form-label">이메일</label>
+          <input type="email" id="email" placeholder="you@example.com" class="form-control">
+        </div>
+
+        <!-- 주소 (한 줄 전체) -->
+        <div class="col-12">
+          <label for="adderss1" class="form-label">주소</label>
+          <input type="text" id="adderss1" placeholder="서울특별시 강남구" class="form-control">
+        </div>
+        <div class="col-12">
+          <label for="adderss2" class="form-label">상세주소(필수 아님)</label>
+          <input type="text" id="adderss2" placeholder="상세주소를 입력해주세요." class="form-control">
+        </div>
+
+        <!-- 가입경로 / 추천인 코드 -->
+        <div class="col-8">
+          <label for="path" class="form-label">가입경로</label>
+          <select name="가입경로" id="path" class="form-select">
+            <option value=""></option>
+            <option value="">값1</option>
+            <option value="">값2</option>
+            <option value="">값3</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <label for="code" class="form-label">추천인 코드</label>
+          <input type="text" id="code" class="form-control">
+        </div>
+
+        <!-- 개인정보 동의 체크박스 (한 줄 전체) -->
+        <div style="border-top:1px solid #ccc"class="col-12 pt-3">
+          <div class="form-check">
+            <input type="checkbox" id="agree" class="form-check-input">
+            <label for="agree" class="form-check-label">개인정보 수집 및 이용에 동의합니다.</label>
+          </div>
+        </div>
+
+        <!-- 제출 버튼 (한 줄 전체) -->
+        <div class="col-12">
+          <input type="submit" value="가입완료" class="btn btn-primary w-100">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+</body>
+
+</html>

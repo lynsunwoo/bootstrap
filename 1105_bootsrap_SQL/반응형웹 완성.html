@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01반응형 내비게이션</title>
+  <!-- 1. 부트스트랩 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- 2. 부트스트랩 javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <style>
+    main {
+      overflow-y: hidden;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    #myCarousel { 
+      /* position:relative; */
+      /* height: 90vh; */
+      aspect-ratio:16/5;
+    }
+
+    .carousel-inner {
+
+    }
+
+    .carousel-item {
+      position: relative;
+      /* height: 90vh; */
+      margin-bottom: 10px;
+    }
+
+    .carousel-item h3 {
+      position: absolute;
+      z-index: 100;
+      font-size: 1.5rem;
+      color: #fff;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 80px;
+    }
+
+    .carousel-item img {
+      width: 100%;
+    }
+
+    /* 정보트론 */
+    .jumbotron {
+      padding-bottom: 25px;
+      margin-bottom: 50px;
+    }
+
+    .jumbotron h2 {
+      font-size: 6rem;
+      margin-bottom: 20px;
+    }
+
+    /* 2번 콘텐츠 서식*/
+    #article2{
+      margin-top:100px;
+    }
+    .cont2 img {
+      width: 15rem
+    }
+
+    /* 4번 콘텐츠 서식 */
+    .cont4 {
+      width: 100%;
+      text-align: center;
+      justify-content:space-between;
+    }
+
+    .cont4 .sub {
+    }
+
+    .cont4 .tit {
+      position: relative;}
+    .tit h2, p{
+      color:#fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 상단 헤더영역  -->
+  <header>
+    <!-- 내비게이션 바 -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md" aria-label="내비게이션 바">
+      <div class="container-fluid">
+        <a href="#" title="부트스트랩 로고">
+          <img src="../images/bootstrap-logo-shadow.png" alt="" class="logo">
+        </a>
+
+        <!-- 모바일 해상도일 경우 나오는 전체메뉴 버튼 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-label="전체메뉴" data-bs-target="#menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 가로메뉴 -->
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a href="#" title="" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link disabled">Disabled</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">드롭다운</a>
+              <ul class="dropdown-menu">
+                <li><a href="#" title="" class="dropdown-item">menu1</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu2</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu3</a></li>
+                <li><a href="#" title="" class="dropdown-item">menu4</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- 검색폼 -->
+          <form role="search">
+            <input type="search" placeholder="검색어 입력" aria-label="검색어 입력" class="form-control">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 메인 콘텐츠 영역 -->
+  <main>
+    <!-- 1. 메인슬라이드 -->
+    <article id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <!-- 콘트롤 버튼 -->
+      <div class="carousel-indicators">
+        <button type="button" class="active" aria-label="slide1" data-bs-target="#myCarousel" data-bs-slide-to="0"
+          aria-current="true"></button>
+        <button type="button" aria-label="slide2" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+        <button type="button" aria-label="slide3" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- 슬라이드 박스 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h3>DESIGN STUDIO WRAP</h3>
+          <img src="./images/slide1.jpg" style="height:800px;" alt="1">
+        </div>
+        <div class="carousel-item">
+          <h3>창의성 기능성 일상과 디지털공간의 조화.</h3>
+          <img src="./images/slide2.jpg" style="height:800px;" alt="2">
+        </div>
+        <div class="carousel-item">
+          <h3>CREATIVE® FUNCTIONALITY</h3>
+          <img src="./images/slide3.jpg" style="height:800px;" alt="3">
+        </div>
+      </div>
+
+      <!-- 좌측버튼 -->
+      <button type="button" class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <!-- 우측버튼 -->
+      <button type="button" class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span aria-hidden="true" class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </article>
+
+    <!-- 2. 가로 3단 목록 콘텐츠 -->
+    <article class="container" id="article2">
+      <div class="row cont2">
+        <div class="col-lg-4 text-center">
+          <img src="./images/pic_dev_font (1).jpg" style="width:200px;height:200px;border-radius:50%;" alt="">
+          <h2 class="py-4">폰트 단위 변환 도구</h2>
+          <p>반응형 웹 퍼블리싱 작업의 필수 도구!<br>
+            기본 사이즈에 따른 각 단위별 수치 변환이 쉬어집니다.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img src="./images/pic_dev_color_code (1).jpg" style="width:200px;height:200px;border-radius:50%;" alt="">
+          <h2 class="py-4">색상 변환 도구</h2>
+          <p>내가 원하는 색상을 코드 타입별로 변환해주는 것은 물론<br>
+            채도별 명도별 색상과 보색까지 한번에 도와주는 도구.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <img src="images/pic_dev_triangle (1).jpg" style="width:200px;height:200px;border-radius:50%;" alt="">
+          <h2 class="py-4">CSS로 삼각형 만들기</h2>
+          <p>정삼각형, 이등변 삼각형 등<br>다양한 삼각형을 CSS로 만들어주는 도구입니다.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. 점보트론 -->
+    <article class="container p-5">
+      <div class="jumbotron text-center bg-body-tertiary rounded-3 py-5">
+        <h2>WRAP STUDIO BEWORKS®</h2>
+        <h5 class="py-5" style="color:#333;">창의성과 기능성이 결합된 랩스튜디오 프로젝트 들여다보기.</h5>
+        <p><a href="#" role="button" title="" class="btn btn-primary btn-mg">더보기</a></p>
+      </div>
+    </article>
+  </main>
+
+  <!-- 4. 가로 4단 목록 콘텐츠 -->
+  <article class="container mb-5">
+    <div class="row cont4">
+      <div class="col-xs-12 col-sm-6 col-md-3 sub"
+        style="background:url('./images/663df8ed2353b7145327.jpg') center/cover no-repeat;aspect-ratio: 6/9;">
+        <div class="tit">
+          <h2 class="pt-5">EASYTRAFFIC</h2>
+          <p>RENEWAL</p>
+          <p class="pt-3"><a href="#" role="button" title="" class="btn btn-light btn-line">더보기</a></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 sub"
+        style="background:url('./images/663df93b48ef41419043.jpg') center/cover no-repeat;aspect-ratio: 6/9;">
+        <div class="tit">
+          <h2 class="pt-5">NMOTION</h2>
+          <p>NMOTION WEBNMOTION WEB</p>
+
+          <p class="pt-3"><a href="#" role="button" title="" class="btn btn-light btn-line">더보기</a></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 sub"
+        style="background:url('./images/663df99c09b8d4062820.jpg') center/cover no-repeat;aspect-ratio: 6/9;">
+        <div class="tit">
+          <h2 class="pt-5">CAMGOING</h2>
+          <p>CAMGOING HYBRID APP</p>
+
+          <p class="pt-3"><a href="#" role="button" title="" class="btn btn-light btn-line">더보기</a></p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3 sub"
+        style="background:url('./images/663dfa52991605613687.jpg') center/cover no-repeat;aspect-ratio: 6/9;">
+        <div class="tit">
+          <h2 class="pt-5">YONSEIWA</h2>
+          <p>DEVELOPE</p>
+
+          <p class="pt-3"><a href="#" role="button" title="" class="btn btn-light btn-line">더보기</a></p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- 하단 푸터영역 -->
+  <footer class="container bg-dark pt-3 pb-3">
+    <div class="float-end">
+      <a href="#" title="위로 바로가기" class="text-decoration-none link-light">Top</a>
+    </div>
+
+    <p>&copy;2025 Company, Inc. &middot;
+      <a href="#" title="이용약관" class="link-light text-decoration-none">Privacy</a>
+      &middot;
+      <a href="#" title="정보" class="link-light text-decoration-none">Terms</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>
